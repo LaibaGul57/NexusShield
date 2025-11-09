@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+/* 🌐 Global Reset + Base Styles */
+html,
+body,
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  scroll-behavior: smooth;
+}
+
+/* ✅ Ensure nested containers scroll correctly */
+#root > div,
+.App,
+.dashboard-container {
+  min-height: auto !important;
+  height: auto !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+  background: transparent;
+}
+
+/* 🎨 Root Theme Variables - Updated to match reference */
+:root {
+  --color-primary: #1a1a1a;     /* Deep charcoal for headings */
+  --color-secondary: #0056b3;   /* Professional blue */
+  --color-accent: #dc3545;      /* Alert red for important elements */
+  --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-muted: #666666;
+  --radius: 8px;
+}
+
+/* 🔗 Links - Clean, professional style */
+a {
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+/* 🔘 Buttons - Reference style */
+button {
+  border-radius: var(--radius);
+  padding: 0.6em 1.2em;
+  border: none;
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+button:hover {
+  background-color: #003d82;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+}
+button:active {
+  transform: translateY(0);
+}
+
+/* 🧩 Headings - Newspaper style */
+h1, h2, h3, h4 {
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+/* 🪄 Cards / Panels - Clean news style */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 🧭 Section Styling */
+section {
+  padding: 60px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* 📰 News-specific components */
+.news-article {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.news-article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.news-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.news-meta {
+  color: #666;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.news-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 🔔 Advisory/Ticker Styles */
+.advisory-banner {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 12px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.advisory-label {
+  background: var(--color-accent);
+  color: white;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+/* 🌐 Smooth horizontal scroll animations */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  padding-left: 100%;
+}
+
+/* 💫 Scrollbar Customization - Subtle */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 40px 15px;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .news-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* 🎯 Utility classes for reference design */
+.text-muted {
+  color: var(--color-muted);
+}
+
+.border-light {
+  border-color: #e9ecef;
+}
+
+.bg-light {
+  background: #f8f9fa;
+}
+
+.shadow-news {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-news-hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Remove dark mode for consistent news appearance */
+@media (prefers-color-scheme: dark) {
+  html, body, #root {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+
+  .card {
+    background: #ffffff;
+    color: #333333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  a {
+    color: #0056b3;
+  }
+
+  button {
+    background-color: #0056b3;
+  }
+
+  button:hover {
+    background-color: #003d82;
+  }
+
+  section {
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+  }
+}

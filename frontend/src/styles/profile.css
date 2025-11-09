@@ -1,0 +1,254 @@
+/* 📄 Page Wrapper - Match community page style */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* 🌐 Main Container */
+.profile-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+/* 🪪 Profile Card - Match community page card style */
+.profile-card {
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  max-width: 600px;
+  width: 100%;
+  border: none;
+}
+
+/* 👤 Profile Header - Match community page header style */
+.profile-header {
+  padding: 0 0 40px 0;
+  border-bottom: none;
+  text-align: left;
+}
+
+.profile-avatar {
+  margin-bottom: 24px;
+}
+
+.profile-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e5e5;
+  transition: all 0.2s ease;
+}
+
+.profile-avatar img:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.profile-role {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+  background: #f8f9fa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  border-left: 4px solid #87ceeb; /* Pastel light blue */
+}
+
+/* 🧾 Details Section - Match community page section style */
+.profile-details {
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #f0f0f0;
+  margin: 0;
+}
+
+.detail-item:last-child {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.detail-item:first-child {
+  border-top: 2px solid #f0f0f0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 1rem;
+  background: #f8f9fa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+/* 🔘 Actions Section - Pastel light blue buttons */
+.profile-actions {
+  display: flex;
+  gap: 16px;
+  padding: 40px 0 0 0;
+  background: transparent;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: none;
+}
+
+.edit-btn,
+.logout-btn {
+  border: 2px solid #87ceeb; /* Pastel light blue */
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: none;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edit-btn {
+  background: #87ceeb; /* Pastel light blue */
+  color: #ffffff;
+  border-color: #87ceeb;
+}
+
+.edit-btn:hover {
+  background: #5dade2; /* Slightly darker pastel blue */
+  border-color: #5dade2;
+}
+
+.logout-btn {
+  background: #ffffff;
+  color: #87ceeb; /* Pastel light blue */
+  border-color: #87ceeb;
+}
+
+.logout-btn:hover {
+  background: #87ceeb; /* Pastel light blue */
+  color: #ffffff;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 40px 20px;
+  }
+  
+  .profile-card {
+    max-width: 100%;
+  }
+  
+  .profile-header {
+    padding: 0 0 30px 0;
+  }
+  
+  .profile-name {
+    font-size: 1.75rem;
+  }
+  
+  .profile-actions {
+    padding: 30px 0 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 30px 16px;
+  }
+  
+  .profile-header {
+    text-align: center;
+    padding: 0 0 24px 0;
+  }
+  
+  .profile-avatar img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .profile-role {
+    font-size: 1rem;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  
+  .detail-label {
+    font-size: 0.9rem;
+  }
+  
+  .detail-value {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 0 0 0;
+  }
+  
+  .edit-btn,
+  .logout-btn {
+    width: 100%;
+    padding: 16px 24px;
+  }
+}
+
+/* Login message styling - Match community page style */
+.profile-container p {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  padding: 60px 40px;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 2px solid #f0f0f0;
+  max-width: 600px;
+  width: 100%;
+  line-height: 1.6;
+  border-left: 4px solid #87ceeb; /* Pastel light blue */
+}

@@ -1,0 +1,113 @@
+/* 📰 Cyber News Section */
+.news-container {
+  padding: 60px 20px;
+  background: #f8fafc;
+}
+
+/* Section Heading */
+.news-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #0a2a43;
+  border-left: 5px solid #0077ff;
+  padding-left: 12px;
+  letter-spacing: -0.5px;
+}
+
+/* 🗞 News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* 🎨 News Card */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-decoration: none;
+  color: #1e293b;
+  border: 1px solid rgba(0, 119, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #0077ff;
+  box-shadow: 0 15px 35px rgba(0, 119, 255, 0.2);
+}
+
+/* 🏷 Card Text */
+.news-title {
+  font-size: 1.2rem;                 /* slightly larger for better readability */
+  font-weight: 700;                  /* bolder for emphasis */
+  margin-bottom: 12px;               /* more breathing room */
+  line-height: 1.5;                  /* smoother spacing */
+  color: #1e3a8a;                    /* deep blue for a professional look */
+  font-family: "Inter", sans-serif;  /* modern, clean font */
+  transition: color 0.3s ease;       /* subtle hover effect */
+}
+
+.news-title {
+  font-size: 1.2rem;                 /* slightly larger for better readability */
+  font-weight: 700;                  /* bolder for emphasis */
+  margin-bottom: 12px;               /* more breathing room */
+  line-height: 1.5;                  /* smoother spacing */
+                 /* deep blue for a professional look */
+  font-family: "Inter", sans-serif;  /* modern, clean font */
+  transition: color 0.3s ease;       /* subtle hover effect */
+}
+
+.news-title:hover {
+  color: #3b82f6;                    /* bright accent on hover */
+  cursor: pointer;
+}
+
+
+.news-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.news-source {
+  font-size: 0.85rem;
+  color: #0077ff;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* 🔗 Read More Button - Centered */
+.read-more-btn {
+  display: block;
+  padding: 10px 20px;
+  background: #0077ff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto; /* Center the button */
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+/* ⏳ Loading Text */
+.loading-text {
+  font-size: 1rem;
+  color: #0077ff;
+  text-align: center;
+  padding: 40px;
+  font-weight: 500;
+}

@@ -1,0 +1,71 @@
+/* ---------- Landing Screen Wrapper ---------- */
+.landing-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #F7F9FC; /* flat light ice blue background */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* ---------- Logo Container ---------- */
+.logo-container {
+  width: 160px;
+  height: 160px;
+  background-color: #FFFFFF; /* clean white */
+  border-radius: 50%;
+  border: 2px solid #C4B5FD; /* lavender accent border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Logo Image ---------- */
+.logo {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  filter: none; /* remove glow */
+  transition: none; /* remove hover animation */
+}
+
+/* ---------- Title ---------- */
+.title {
+  font-size: 2.4rem;
+  margin-top: 25px;
+  font-weight: 700;
+  color: #1E293B; /* charcoal text */
+  letter-spacing: 1px;
+  background: none; /* remove gradient */
+ 
+}
+
+/* ---------- Subtitle ---------- */
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  font-weight: 500;
+  color: #64748B; /* slate gray */
+  background: none; /* remove gradient */
+
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .logo-container {
+    width: 120px;
+    height: 120px;
+  }
+}

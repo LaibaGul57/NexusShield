@@ -1,0 +1,112 @@
+.center-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.otp-container {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 60px 40px;
+  width: 400px;
+  box-shadow: none;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+}
+
+.otp-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.otp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.otp-form input {
+  padding: 14px 16px;
+  border-radius: 0;
+  border: 2px solid #e5e5e5;
+  font-size: 1rem;
+  color: #1a1a1a;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.otp-form input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  background: #fafafa;
+}
+
+.otp-form input::placeholder {
+  color: #999;
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+.otp-btn {
+  background: #87ceeb; /* Pastel light blue */
+  color: white;
+  border: 2px solid #87ceeb;
+  padding: 12px 28px; /* Reduced padding */
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem; /* Slightly smaller font */
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px; /* Reduced margin */
+  width: fit-content;
+  align-self: center;
+}
+
+.otp-btn:hover:not(:disabled) {
+  background: #92c9dc;
+  border-color: #92c9dc;
+  color: #1a252f;
+}
+
+.otp-btn:disabled {
+  background: #c2e0f0;
+  border-color: #c2e0f0;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+  .otp-container {
+    width: 100%;
+    max-width: 320px;
+    padding: 40px 24px;
+    margin: 20px;
+  }
+  
+  .otp-title {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+  
+  .otp-form {
+    gap: 16px;
+  }
+  
+  .otp-form input {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+  }
+}

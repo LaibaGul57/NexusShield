@@ -1,0 +1,175 @@
+/* ---------- Container ---------- */
+.welcome-container {
+  background: #ffffff; /* Clean white background */
+  color: #1a1a1a;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ---------- Split Layout ---------- */
+.split-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Left Side Text */
+.text-side {
+  flex: 1;
+  text-align: left;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  color: #666; /* Softer gray */
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.main-title strong {
+  color: #87ceeb; /* Pastel light blue accent */
+}
+
+/* Button - Pastel light blue */
+.start-btn {
+  background: #87ceeb; /* Pastel light blue */
+  border: 2px solid #87ceeb;
+  color: white;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  border-radius: 0; /* Square edges */
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.start-btn:hover {
+  background: #5dade2; /* Slightly darker pastel blue */
+  border-color: #5dade2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
+}
+
+/* ---------- Logo Section ---------- */
+.logo-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  width: 280px;
+  height: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border: 3px solid #f0f0f0;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  border-color: #87ceeb; /* Pastel light blue on hover */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .split-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .text-side {
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .split-container {
+    gap: 30px;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .welcome-text {
+    font-size: 1.1rem;
+  }
+
+  .logo-container {
+    width: 220px;
+  }
+
+  .logo-img {
+    max-width: 220px;
+  }
+
+  .start-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+  }
+
+  .logo-container {
+    width: 180px;
+  }
+
+  .logo-img {
+    max-width: 180px;
+    padding: 15px;
+  }
+
+  .start-btn {
+    padding: 12px 24px;
+    width: 100%;
+  }
+}
