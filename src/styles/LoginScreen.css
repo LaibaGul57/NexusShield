@@ -1,0 +1,76 @@
+/* ---------- Body & Root Reset ---------- */
+body, html, #root {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc; /* Halka contrast background */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* ---------- Login Container Fix ---------- */
+.login-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 40px 30px;
+  /* !important use kiya hai taake global width override ho jaye */
+  width: 100% !important; 
+  max-width: 380px !important; 
+  margin: auto !important; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  font-family: "Georgia", serif; /* Screenshot jaisa font */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form input {
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  background: #f1f5f9; /* Screenshot jaisa halka blue/grey tint */
+}
+
+.login-btn {
+  background: #87ceeb;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #87ceeb;
+  border: 1px solid #87ceeb;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.forgot-password {
+  margin-top: 15px;
+  color: #64748b;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}

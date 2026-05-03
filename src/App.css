@@ -1,0 +1,161 @@
+/* 🌐 Root Container - Updated for news layout */
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-radius: 0;
+  width: 100%;
+}
+
+/* 🔹 Logo Styling - More professional */
+.logo {
+  height: 3.5em;
+  padding: 0.5em;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+  filter: none;
+}
+
+/* 💼 Card Section - News-style cards */
+.card {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 🧾 Subtle Text (for secondary info) */
+.read-the-docs {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+/* 📰 News-specific utility classes */
+.news-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.news-card-content {
+  padding: 1.25rem;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+}
+
+.news-meta {
+  color: #666666;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.news-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* 🎨 Accessibility and Responsive Tweaks */
+@media (max-width: 768px) {
+  #root {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    height: 3em;
+  }
+
+  .card {
+    padding: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  .news-card-content {
+    padding: 1rem;
+  }
+
+  .news-title {
+    font-size: 1.1rem;
+  }
+
+  .news-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .news-title {
+    font-size: 1rem;
+  }
+}
+
+/* 🔗 Professional link styles */
+.card a {
+  color: #0056b3;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card a:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+/* 📍 Section spacing for news layout */
+.section-spacing {
+  padding: 3rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.section-spacing:last-of-type {
+  border-bottom: none;
+}
+

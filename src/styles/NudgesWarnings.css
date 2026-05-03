@@ -1,0 +1,188 @@
+/* 🌤 Wrapper */
+.nudges-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f7f9fc, #e0e7ff);
+  color: #1e293b;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌸 Container */
+.nudges-container {
+  flex: 1;
+  padding: 40px 80px;
+}
+
+/* Header */
+.nudges-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nudges-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7dd3fc, #a78bfa);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nudges-header p {
+  color: #64748b;
+  margin-top: 8px;
+}
+
+/* 📊 Charts side by side */
+.nudges-content {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Chart Card */
+.chart-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(124, 144, 255, 0.15);
+}
+
+.chart-card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e293b;
+  border-left: 4px solid #a78bfa;
+  padding-left: 8px;
+}
+
+/* Legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .nudges-content {
+    flex-direction: column;
+  }
+
+  .chart-card {
+    width: 100%;
+  }
+}
+
+
+
+/* 🌙 Fullscreen layout */
+.nudges-fullscreen {
+  background-color: #0a192f;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* 🧭 Header */
+.header {
+  background-color: #112240;
+  padding: 20px 40px;
+  border-bottom: 2px solid #00e0ff;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: #00e0ff;
+  font-weight: 600;
+}
+
+/* 🧩 Main content */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* 📊 Left Section */
+.left-section,
+.right-section {
+  background-color: #112240;
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.left-section:hover,
+.right-section:hover {
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.3);
+}
+
+.left-section h2,
+.right-section h2 {
+  color: #00e0ff;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* 🏷️ Legend */
+.legend {
+  margin-top: 20px;
+}
+
+.legend p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.legend span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+}

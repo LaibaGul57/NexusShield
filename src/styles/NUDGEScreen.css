@@ -1,0 +1,162 @@
+/* ✨ NUDGEScreen - Blue & Purple Professional Theme ✨ */
+
+.nudge-screen-wrapper { 
+  background: radial-gradient(circle at top right, #fdfdff, #f8fafc); 
+  min-height: 100vh; 
+  font-family: 'Inter', sans-serif; 
+}
+
+.nudge-screen-container { 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 40px 30px; 
+}
+
+/* Dashboard Header */
+.dashboard-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 35px; 
+}
+
+.page-title { 
+  font-size: 2rem; 
+  color: #1e293b; 
+  font-weight: 800; 
+  border-bottom: 4px solid #d6ceee; /* Pastel Purple Underline */
+  padding-bottom: 5px;
+  font-family: "Georgia", serif;
+}
+
+/* Stat Cards with Theme Borders */
+.stats-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap: 25px; 
+  margin-bottom: 40px; 
+}
+
+.stat-card { 
+  background: white; 
+  padding: 25px; 
+  border-radius: 20px; 
+  box-shadow: 0 10px 25px rgba(214, 206, 238, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* Primary Dark Blue Accent */
+  border-left: 6px solid #1e3a8a; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(30, 58, 138, 0.15);
+}
+
+/* Blue & Purple Shaded Variants */
+.stat-card:nth-child(1) { border-left-color: #1e3a8a; } /* Dark Blue */
+.stat-card:nth-child(2) { border-left-color: #87ceeb; } /* Light Blue */
+.stat-card:nth-child(3) { border-left-color: #a78bfa; } /* Soft Purple */
+.stat-card:nth-child(4) { border-left-color: #d6ceee; } /* Pastel Purple */
+
+.stat-card p { 
+  color: #64748b; 
+  font-size: 0.85rem; 
+  margin: 0; 
+  font-weight: 700; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card h3 { 
+  font-size: 2.2rem; 
+  color: #1e293b; 
+  margin: 12px 0 0 0; 
+  font-weight: 800;
+}
+
+/* Main Grid */
+.charts-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px; 
+}
+
+.full-width { grid-column: span 2; }
+
+.chart-container { 
+  background: white; 
+  padding: 30px; 
+  border-radius: 24px; 
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.05); 
+  border: 1px solid #f1f5f9;
+}
+
+.chart-title { 
+  font-size: 1.25rem; 
+  color: #334155; 
+  margin-bottom: 25px; 
+  font-weight: 700; 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+}
+
+/* Accent Icon Blue/Purple Gradient */
+.chart-title::before {
+  content: "";
+  width: 5px;
+  height: 22px;
+  background: linear-gradient(to bottom, #1e3a8a, #d6ceee);
+  border-radius: 10px;
+}
+
+/* Scrollable Table - Custom Blue/Purple Scrollbar */
+.user-list-box { 
+  max-height: 400px; 
+  overflow-y: auto; 
+  padding-right: 10px;
+}
+
+.user-list-box::-webkit-scrollbar { width: 6px; }
+.user-list-box::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+.user-list-box::-webkit-scrollbar-thumb:hover { background: #a78bfa; }
+
+.modern-table { width: 100%; border-collapse: collapse; }
+
+.modern-table th { 
+  text-align: left; 
+  padding: 15px; 
+  color: #475569; 
+  font-size: 0.8rem; 
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  border-bottom: 2px solid #eef2ff; 
+  background-color: #fcfdff;
+}
+
+.modern-table td { 
+  padding: 18px 15px; 
+  border-bottom: 1px solid #f1f5f9; 
+  font-size: 0.95rem; 
+  color: #1e293b;
+}
+
+.modern-table tr:hover {
+  background-color: #f5f8ff; /* Light Blue hover tint */
+}
+
+/* Squircle Avatar in Theme Colors */
+.user-avatar { 
+  width: 36px; 
+  height: 36px; 
+  background: #eef2ff; 
+  border-radius: 12px; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-right: 12px; 
+  font-weight: bold; 
+  color: #1e3a8a; /* Dark Blue text */
+  border: 1px solid #d6ceee;
+}

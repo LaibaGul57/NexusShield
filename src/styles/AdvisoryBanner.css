@@ -1,0 +1,49 @@
+.advisory-banner {
+  display: flex;
+  align-items: center;
+  background: #eef2ff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.advisory-title {
+  font-weight: bold;
+  margin-right: 16px;
+  color: #0d47a1;
+  font-size: 16px;
+}
+
+.advisory-scroll-container {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.advisory-scroll-text {
+  display: inline-flex;
+  gap: 80px; /* space between messages */
+  animation: scroll 40s linear infinite; /* slow and smooth */
+}
+
+.advisory-scroll-text a {
+  display: inline-block;
+  padding: 0 12px;
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 500;
+  font-size: 16px; /* readable size */
+  transition: color 0.3s ease;
+}
+
+.advisory-scroll-text a:hover {
+  color: #1976d2;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* scroll half of content width for continuous effect */
+}

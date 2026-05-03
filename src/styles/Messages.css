@@ -1,0 +1,155 @@
+/* 🌐 Professional Messages Page Style - Pastel Theme */
+.messages-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f7fa; /* Light pastel blue background */
+  color: #44546a;
+  font-family: "Inter", sans-serif;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.messages-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 800;
+  font-family: "Georgia", "Times New Roman", serif;
+  border-bottom: 3px solid #d6ceee; /* Pastel Lavender Border */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Table header ko pehli image jaisa set karne ke liye */
+.messages-table th {
+  background: linear-gradient(135deg, #87ceeb, #d6ceee);
+  color: #ffffff;
+  padding: 18px 20px;
+  text-transform: uppercase;
+  font-size: 0.95rem; /* Pehli image ke mutabiq font size slightly bada kiya */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  /* Capsule shape khatam karke sirf top corners round kiye */
+  border-radius: 0; 
+}
+
+/* Sirf top-left corner round karne ke liye */
+.messages-table th:first-child { 
+  border-top-left-radius: 12px; 
+}
+
+/* Sirf top-right corner round karne ke liye */
+.messages-table th:last-child { 
+  border-top-right-radius: 12px; 
+}
+
+/* Table container se extra padding/spacing hatane ke liye taake header fit baithe */
+.messages-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0; /* Isko 0 rakhein taake header aur rows jude rahein */
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden; /* Ye zaroori hai taake rounding sahi dikhe */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.messages-table th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+.messages-table th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+/* 🚀 Rows with Card Look */
+.message-row {
+  background: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.message-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(135, 206, 235, 0.2); /* Soft blue glow */
+}
+
+.message-row td {
+  padding: 20px;
+  vertical-align: middle;
+  border: none;
+}
+
+/* 👤 User Profile Styling */
+.user-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #87ceeb, #a78bfa); /* Blue to Purple Pastel */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-name-text {
+  font-weight: 700;
+  color: #555555;
+}
+
+/* 🆔 User ID Badge */
+.id-badge {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* 💬 Message Bubble (Pastel Blue Theme) */
+.message-bubble-text {
+  background: #f0f9ff; /* Very light pastel blue */
+  color: #5eaad0; /* Your Pastel Blue text color */
+  padding: 12px 18px;
+  border-radius: 15px;
+  border-left: 5px solid #87ceeb;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ⏰ Colorful Timestamp */
+.timestamp-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-badge {
+  color: #9f86e3; /* Pastel Lavender for dates */
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.time-text {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .messages-table { display: block; overflow-x: auto; }
+}

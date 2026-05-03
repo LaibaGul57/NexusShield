@@ -1,0 +1,106 @@
+/* 🌐 Professional User Info Styling */
+.userinfo-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  color: #333333;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 50px;
+}
+
+/* 🧭 Container */
+.userinfo-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 🔹 Heading */
+.userinfo-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-family: "Georgia", "Times New Roman", serif;
+  border-bottom: 3px solid #a78bfa;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* 📋 Table Card */
+.table-card {
+  background: #ffffff;
+  padding: 0; /* Table ke padding ko control karne ke liye */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 📊 Table Styling */
+.userinfo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e5e7eb;
+}
+
+.userinfo-table th,
+.userinfo-table td {
+  padding: 18px 20px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Header Gradient Style */
+.userinfo-table th {
+  background: linear-gradient(135deg, #87ceeb, #d6ceee);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Zebra Striping */
+.userinfo-table tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.userinfo-table tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* Hover Effect */
+.userinfo-table tr:hover {
+  background: #f0f7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 86, 179, 0.1);
+  transition: all 0.2s ease;
+}
+
+.userinfo-table td {
+  color: #444444;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .userinfo-container {
+    padding: 30px 15px;
+  }
+
+  .userinfo-table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .userinfo-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

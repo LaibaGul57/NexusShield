@@ -1,0 +1,130 @@
+.risk-report-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f8fafc; /* Light background taake pastel colors pop karein */
+}
+
+.report-header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Heading with Pastel Purple Border */
+.report-header-section h1 {
+  font-size: 2.2rem;
+  color: #1e293b;
+  border-bottom: 3px solid #d6ceee; /* Pastel Purple */
+  display: inline-block;
+  padding-bottom: 10px;
+  font-family: "Georgia", serif;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Donut Layout Fix */
+.hero-chart-section {
+  margin-bottom: 30px;
+}
+
+.donut-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.donut-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.donut-stats-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 200px;
+}
+
+/* 💊 Stat Pills with Pastel Borders */
+.stat-pill {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e2e8f0;
+  /* Left border blue rakha hai consistency ke liye */
+  border-left: 5px solid #87ceeb; /* Pastel Blue */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s;
+}
+
+.stat-pill:hover {
+  transform: translateX(5px);
+  border-left-color: #a78bfa; /* Hover pe Purple accent */
+}
+
+.stat-info .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-info .value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* 📋 Report Cards with Lavender Shadow */
+.report-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #eef2ff;
+  /* Bohat halki purple shadow */
+  box-shadow: 0 10px 25px -5px rgba(214, 206, 238, 0.3); 
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card ke upar ek choti si purple line design ke liye */
+.report-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #87ceeb, #d6ceee); /* Blue to Purple Gradient */
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.bar-chart-wrapper {
+  overflow-x: auto;
+  padding: 10px;
+}
+
+/* Scrollbar Styling (Pastel) */
+.bar-chart-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.bar-chart-wrapper::-webkit-scrollbar-thumb {
+  background: #d6ceee;
+  border-radius: 10px;
+}

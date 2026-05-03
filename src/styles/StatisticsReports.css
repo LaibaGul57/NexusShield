@@ -1,0 +1,123 @@
+/* 🏢 Main Wrapper & Container */
+.stats-wrapper {
+  background: radial-gradient(circle at top right, #fdfdff, #f8fafc);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* 📝 Typography */
+.stats-title {
+  font-size: 2.2rem;
+  color: #1e293b;
+  border-bottom: 4px solid #d6ceee;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-family: "Georgia", serif;
+}
+
+.stats-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* 🏁 Cards Grid & Glassmorphism */
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.stat-card-item {
+  position: relative;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(214, 206, 238, 0.25); 
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.card-glass-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  transition: 0.6s;
+}
+
+.stat-card-item:hover .card-glass-effect {
+  left: 100%;
+}
+
+.stat-card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(135, 206, 235, 0.2);
+}
+
+.stat-card-item span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+.stat-card-item h3 {
+  font-size: 2.2rem;
+  margin-top: 10px;
+  color: #1e293b;
+  font-weight: 800;
+}
+
+/* 🎨 Theme Variants */
+.stat-card-item.total { border-left: 6px solid #87ceeb; }
+.stat-card-item.safe { border-left: 6px solid #b9d9eb; }
+.stat-card-item.partial { border-left: 6px solid #c3bef0; }
+.stat-card-item.danger { border-left: 6px solid #d6ceee; }
+
+/* 📈 Chart Area */
+.chart-section {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 20px 50px rgba(167, 139, 250, 0.1);
+}
+
+.chart-label {
+  font-size: 1.4rem;
+  color: #334155;
+  margin-bottom: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chart-label::before {
+  content: "";
+  width: 6px;
+  height: 24px;
+  background: linear-gradient(to bottom, #87ceeb, #d6ceee);
+  border-radius: 10px;
+}
+
+.loading-text {
+  text-align: center;
+  color: #94a3b8;
+  padding: 50px;
+  font-style: italic;
+}
