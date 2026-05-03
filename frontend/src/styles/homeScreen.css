@@ -1,0 +1,381 @@
+/* 🌐 Base Layout - Clean, minimal style */
+html, body, #root {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* 🌟 Dashboard Container */
+.dashboard-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* 🔔 Advisory Banner - Light blue style */
+.advisory-banner {
+  display: flex;
+  align-items: center;
+  background: #f0f7ff; /* Light blue background */
+  border-bottom: 1px solid #cfe2ff;
+  border-top: 1px solid #cfe2ff;
+  overflow: hidden;
+  position: relative;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.advisory-title {
+  background-color: #87ceeb; /* Pastel light blue */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  min-width: 160px;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Scrolling Container */
+.advisory-scroll-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background: #f8fbff; /* Very light blue background */
+  position: relative;
+}
+
+/* Scrolling Text */
+.advisory-scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: black; /* Pastel light blue text color */
+  font-weight: 500;
+  animation: scroll 30s linear infinite;
+  font-family: "Inter", sans-serif;
+}
+
+.advisory-scroll-text span {
+  margin: 0 40px;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 🏠 Dashboard Main - Clean typography and spacing */
+.dashboard-main {
+  flex: 1;
+  padding: 60px 20px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-main h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-main p {
+  color: #666;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 0 30px 0;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+/* 💎 Download Link - Pastel light blue styling */
+.download-link {
+  margin-left: 8px;
+  font-weight: 600;
+  color: #87ceeb; /* Pastel light blue */
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+.download-link:hover {
+  color: #5dade2; /* Slightly darker pastel blue */
+}
+
+/* 💎 Watch Section - Clean, minimal design */
+.watch-section {
+  margin-top: 60px;
+  padding: 50px 0;
+  background: transparent;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.watch-section h3 {
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 35px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 🎥 Video Grid - Clean card design */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: stretch;
+}
+
+.video-card { 
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  padding: 0;
+  text-align: left;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.video-card:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+}
+
+.video-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.video-card p {
+  padding: 20px;
+  margin: 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.video-card p a {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: block;
+}
+
+.video-card p a:hover {
+  color: #87ceeb; /* Pastel light blue */
+  text-decoration: underline;
+}
+
+/* 📰 Cyber News Section - Clean, minimal layout */
+.cyber-news-section {
+  background: #ffffff;
+  padding: 60px 0;
+  text-align: left;
+  border-top: 2px solid #f0f0f0;
+}
+
+.news-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.news-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 720px;
+  margin: 0 0 50px 0;
+  line-height: 1.6;
+}
+
+/* 🗞️ News Grid - Smaller cards layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced from 320px */
+  gap: 20px; /* Reduced from 25px */
+  padding: 0;
+}
+
+/* 🎨 News Cards - Smaller, compact design */
+.news-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 0;
+  color: #1a1a1a;
+  text-decoration: none;
+  border: 1px solid #e5e5e5;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  height: 100%;
+  min-height: 220px; /* Reduced height */
+}
+
+.news-card:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+  background: #fafafa;
+}
+
+/* Card content padding - Reduced */
+.news-card > div {
+  padding: 18px; /* Reduced from 25px */
+}
+
+/* Typography - Smaller, more compact */
+.news-title {
+  font-size: 1.1rem; /* Reduced from 1.2rem */
+  font-weight: 600;
+  margin-bottom: 12px; /* Reduced from 15px */
+  line-height: 1.4;
+  color: #1a1a1a;
+  font-family: "Inter", sans-serif;
+}
+
+.news-date, .news-source {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem; /* Reduced from 0.85rem */
+  margin-bottom: 8px; /* Reduced from 10px */
+  gap: 6px;
+  color: #666;
+  font-family: "Inter", sans-serif;
+}
+
+.news-date::before {
+  content: '📅';
+  font-size: 0.75rem; /* Reduced from 0.8rem */
+}
+
+.news-source::before {
+  content: '🔗';
+  font-size: 0.75rem; /* Reduced from 0.8rem */
+}
+
+/* Read More Button - Smaller */
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 20px; /* Reduced from 12px 24px */
+  background: #87ceeb; /* Pastel light blue */
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  margin: 12px 0 0 0; /* Reduced from 15px */
+  transition: all 0.2s ease;
+  border: 2px solid #87ceeb; /* Pastel light blue */
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.read-more-btn:hover {
+  background: #5dade2; /* Slightly darker pastel blue */
+  border-color: #5dade2;
+}
+
+/* Loading Text */
+.loading-text {
+  font-size: 1.05rem;
+  color: #666;
+  text-align: center;
+  padding: 40px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .video-grid, .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 40px 15px;
+  }
+
+  .dashboard-main h2 {
+    font-size: 1.8rem;
+  }
+
+  .watch-section, .cyber-news-section {
+    padding: 40px 0;
+  }
+
+  .watch-section h3, .news-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .advisory-title {
+    min-width: 140px;
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid, .news-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-main h2 {
+    font-size: 1.6rem;
+  }
+  
+  .advisory-banner {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .advisory-title {
+    width: 100%;
+  }
+  
+  .dashboard-main {
+    padding: 30px 15px;
+  }
+
+  .news-card {
+    min-height: 200px; /* Even smaller on mobile */
+  }
+
+  .news-card > div {
+    padding: 15px; /* Less padding on mobile */
+  }
+}

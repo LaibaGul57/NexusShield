@@ -1,0 +1,261 @@
+/* 🌤 Top Navbar - Clean, minimal style */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #f0f0f0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 🌸 Logo - Clean professional style */
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  filter: none;
+  transition: transform 0.2s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.02);
+}
+
+/* 💫 Navigation Links - Pastel light blue style */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #87ceeb; /* Pastel light blue */
+  border-bottom: 2px solid #87ceeb; /* Pastel light blue */
+}
+
+/* 👤 Profile Section - Pastel light blue style */
+.profile-section {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile-icon {
+  font-size: 1.8rem;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.profile-icon:hover {
+  color: #87ceeb; /* Pastel light blue */
+}
+
+/* 📂 Dropdown Menu - Pastel light blue accents */
+.profile-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #ffffff;
+  border: 2px solid #f0f0f0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  width: 140px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-dropdown a {
+  text-decoration: none;
+  color: #666;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown a:hover {
+  background: #f0f7ff; /* Light blue background */
+  color: #87ceeb; /* Pastel light blue */
+}
+
+/* 📱 Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-icon:hover {
+  color: #87ceeb; /* Pastel light blue */
+}
+
+/* 📱 Mobile Drawer - Pastel light blue accents */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 260px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: none;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+  border-right: 2px solid #f0f0f0;
+}
+
+.mobile-drawer.open {
+  left: 0;
+}
+
+.mobile-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-drawer li {
+  margin: 0;
+}
+
+.mobile-drawer a {
+  display: block;
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mobile-drawer a.active,
+.mobile-drawer a:hover {
+  background: #f0f7ff; /* Light blue background */
+  color: #87ceeb; /* Pastel light blue */
+  border-left: 4px solid #87ceeb; /* Pastel light blue */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.close-btn:hover {
+  color: #87ceeb; /* Pastel light blue */
+}
+
+/* 🔒 Overlay for mobile drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.mobile-drawer-overlay.open {
+  display: block;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: block;
+  }
+  
+  .top-navbar {
+    padding: 12px 15px;
+  }
+  
+  .profile-section {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-navbar {
+    padding: 12px 15px;
+  }
+  
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .profile-icon {
+    font-size: 1.6rem;
+  }
+  
+  .mobile-drawer {
+    width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-navbar {
+    padding: 10px 12px;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profile-icon {
+    font-size: 1.5rem;
+  }
+  
+  .mobile-drawer {
+    width: 220px;
+    padding-top: 50px;
+  }
+  
+  .mobile-drawer a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}

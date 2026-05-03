@@ -1,0 +1,140 @@
+/* ---------- Body & Root ---------- */
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Main Container - Smaller ---------- */
+.signup-container {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 40px 30px; /* Reduced padding */
+  width: 360px; /* Reduced width */
+  box-shadow: none;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+}
+
+/* ---------- Title ---------- */
+.signup-title {
+  font-size: 1.8rem; /* Slightly smaller */
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px; /* Reduced margin */
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Signup Form ---------- */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduced gap */
+}
+
+.signup-form input {
+  padding: 12px 14px; /* Slightly smaller padding */
+  border-radius: 0;
+  border: 2px solid #e5e5e5;
+  font-size: 0.95rem; /* Slightly smaller font */
+  color: #1a1a1a;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: #87ceeb; /* Pastel light blue */
+  background: #fafafa;
+}
+
+.signup-form input::placeholder {
+  color: #999;
+}
+
+/* ---------- Password Strength Message ---------- */
+.password-strength {
+  font-size: 0.85rem; /* Slightly smaller */
+  margin: -8px 0 8px 0; /* Reduced margins */
+  text-align: left;
+}
+
+/* ---------- Signup Button - Pastel light blue ---------- */
+.signup-btn {
+  background: #87ceeb; /* Pastel light blue */
+  color: #ffffff;
+  border: 2px solid #87ceeb;
+  padding: 12px; /* Reduced padding */
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem; /* Slightly smaller font */
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px; /* Reduced margin */
+}
+
+.signup-btn:hover {
+  background: #5dade2; /* Slightly darker pastel blue */
+  border-color: #5dade2;
+}
+
+/* ---------- Login Redirect ---------- */
+.login-text {
+  color: #666;
+  margin-top: 20px; /* Reduced margin */
+  font-size: 0.9rem; /* Slightly smaller */
+}
+
+.login-link {
+  color: #87ceeb; /* Pastel light blue */
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 6px; /* Reduced margin */
+  cursor: pointer;
+}
+
+.login-link:hover {
+  color: #5dade2; /* Slightly darker pastel blue */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+  .signup-container {
+    width: 100%;
+    max-width: 300px; /* Smaller max-width */
+    padding: 30px 20px; /* Reduced padding */
+    margin: 15px; /* Reduced margin */
+  }
+  
+  .signup-title {
+    font-size: 1.6rem; /* Smaller on mobile */
+    margin-bottom: 20px;
+  }
+  
+  .signup-form {
+    gap: 14px; /* Smaller gap */
+  }
+  
+  .signup-form input {
+    padding: 10px 12px; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font */
+  }
+  
+  .signup-btn {
+    padding: 10px; /* Smaller button */
+    font-size: 0.9rem;
+  }
+  
+  .login-text {
+    margin-top: 16px;
+    font-size: 0.85rem;
+  }
+}

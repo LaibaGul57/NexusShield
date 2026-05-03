@@ -1,0 +1,262 @@
+/* 🌐 Professional Statistics Page with Purple Theme */
+
+.stats-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fafafe 0%, #f5f3ff 100%);
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  color: #333333;
+}
+
+/* 🧾 Main Container */
+.stats-container {
+  flex: 1;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 📌 Header Titles */
+.stats-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.stats-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-family: "Georgia", "Times New Roman", serif;
+  border-bottom: 3px solid #a78bfa;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.stats-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+/* 📈 Chart Card */
+.chart-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.12);
+  border: 1px solid #d6ceee;
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(167, 139, 250, 0.2);
+}
+
+/* Chart specific styling */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f0edff;
+}
+
+.recharts-x-axis .recharts-cartesian-axis-line {
+  stroke: #d6ceee;
+}
+
+.recharts-y-axis .recharts-cartesian-axis-line {
+  stroke: #d6ceee;
+}
+
+.recharts-x-axis .recharts-cartesian-axis-tick-value {
+  fill: #666666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.recharts-y-axis .recharts-cartesian-axis-tick-value {
+  fill: #666666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Custom tooltip */
+.recharts-tooltip-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2) !important;
+}
+
+.recharts-default-tooltip {
+  background: #ffffff !important;
+  border: 1px solid #d6ceee !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.15) !important;
+}
+
+.recharts-tooltip-label {
+  color: #a78bfa !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+.recharts-tooltip-item {
+  color: #333333 !important;
+  font-weight: 500 !important;
+}
+
+/* Line and dot styling */
+.recharts-line-curve {
+  stroke-width: 3px;
+}
+
+.recharts-line-dot {
+  fill: #a78bfa;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.recharts-line-dot:hover {
+  fill: #7c3aed;
+  stroke: #ffffff;
+  stroke-width: 3px;
+}
+
+/* Custom legend or additional info */
+.chart-info {
+  text-align: center;
+  margin-top: 20px;
+  color: #666666;
+  font-size: 0.95rem;
+  padding: 15px;
+  background: #faf7ff;
+  border-radius: 8px;
+  border: 1px solid #f0edff;
+}
+
+/* Additional metrics section */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(167, 139, 250, 0.1);
+  border: 1px solid #f0edff;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.15);
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a78bfa;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .stats-container {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+
+  .stats-title {
+    font-size: 2rem;
+  }
+
+  .stats-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .chart-card {
+    padding: 25px 20px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .metric-card {
+    padding: 20px;
+  }
+
+  .metric-value {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    padding: 30px 10px;
+    gap: 25px;
+  }
+
+  .stats-title {
+    font-size: 1.8rem;
+  }
+
+  .stats-subtitle {
+    font-size: 1rem;
+  }
+
+  .chart-card {
+    padding: 20px 15px;
+  }
+
+  .metric-card {
+    padding: 15px;
+  }
+
+  .metric-value {
+    font-size: 1.6rem;
+  }
+}
+
+/* Loading state */
+.chart-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* No data state */
+.chart-no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  color: #666666;
+  font-size: 1.1rem;
+  font-style: italic;
+}

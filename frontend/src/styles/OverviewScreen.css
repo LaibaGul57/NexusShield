@@ -1,0 +1,294 @@
+/* 🌐 Professional Overview Page with Purple Theme */
+
+.overview-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fafafe 0%, #f5f3ff 100%);
+  font-family: "Inter", sans-serif;
+  color: #333333;
+}
+
+/* 🌐 Main Container */
+.overview-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 📌 Title */
+.overview-title {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: "Georgia", "Times New Roman", serif;
+  border-bottom: 3px solid #a78bfa;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.overview-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  text-align: center;
+  font-weight: 500;
+  max-width: 600px;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* 📊 Card Grid */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 💠 Cards */
+.overview-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.12);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #d6ceee;
+  position: relative;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(167, 139, 250, 0.2);
+}
+
+/* 🌈 Gradient Top Bar */
+.card-bar {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+}
+
+/* Different gradient colors for different cards */
+.overview-card:nth-child(1) .card-bar {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+.overview-card:nth-child(2) .card-bar {
+  background: linear-gradient(135deg, #7dd3fc, #0ea5e9);
+}
+
+.overview-card:nth-child(3) .card-bar {
+  background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+}
+
+.overview-card:nth-child(4) .card-bar {
+  background: linear-gradient(135deg, #67e8f9, #22d3ee);
+}
+
+/* 📦 Card Content */
+.card-content {
+  padding: 35px 25px;
+  width: 100%;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.card-label {
+  font-size: 1.1rem;
+  color: #666666;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #888888;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* ✨ Hover Effects */
+.overview-card:hover .card-number {
+  color: #7c3aed;
+  transform: scale(1.05);
+}
+
+.overview-card:hover .card-icon {
+  background: rgba(167, 139, 250, 0.2);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Trend indicators */
+.card-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.trend-up {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.trend-down {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.trend-neutral {
+  color: #666666;
+  background: rgba(102, 102, 102, 0.1);
+}
+
+/* Additional info section */
+.card-footer {
+  width: 100%;
+  padding: 15px 25px;
+  background: #faf7ff;
+  border-top: 1px solid #f0edff;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-container {
+    padding: 40px 15px;
+  }
+
+  .overview-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .overview-subtitle {
+    font-size: 1.1rem;
+    margin-top: -25px;
+    margin-bottom: 30px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .card-content {
+    padding: 25px 20px;
+  }
+
+  .card-number {
+    font-size: 2.2rem;
+  }
+
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-container {
+    padding: 30px 10px;
+  }
+
+  .overview-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .overview-subtitle {
+    font-size: 1rem;
+    margin-top: -20px;
+    margin-bottom: 25px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-content {
+    padding: 20px 15px;
+  }
+
+  .card-number {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/* Loading state for cards */
+.overview-card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.overview-card.loading .card-number {
+  background: #e5e7eb;
+  color: transparent;
+  border-radius: 8px;
+  width: 80px;
+  height: 32px;
+  margin: 0 auto 12px auto;
+}
+
+.overview-card.loading .card-label {
+  background: #e5e7eb;
+  color: transparent;
+  border-radius: 6px;
+  width: 120px;
+  height: 20px;
+  margin: 0 auto 15px auto;
+}

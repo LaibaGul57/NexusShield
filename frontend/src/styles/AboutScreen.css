@@ -1,0 +1,397 @@
+/* ---------- General Page Setup ---------- */
+.about-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff; /* Changed to white background */
+  color: #1a1a1a;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ---------- Header ---------- */
+.about-header {
+  text-align: center;
+  padding: 80px 20px 50px;
+  background: linear-gradient(135deg, #e6f2ff 0%, #d4e7ff 100%); /* Light blue gradient */
+  color: #1a1a1a;
+  border-bottom: 3px solid #87ceeb; /* Pastel light blue border */
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #87ceeb, #a8d8ff, #c2e6ff); /* Light blue gradient */
+}
+
+.about-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em;
+  color: #2d3748; /* Solid dark color for better readability */
+}
+
+.about-header p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #5a5a5a;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+/* ---------- Section Styling ---------- */
+.about-section {
+  background: #ffffff; /* Changed to white background */
+  padding: 60px 20px;
+  margin: 0 auto;
+  border-bottom: 2px solid #f0f0f0; /* Changed to neutral border */
+  max-width: 1200px;
+  position: relative;
+}
+
+/* ---------- Intro & Vision ---------- */
+.intro-section {
+  padding-top: 40px;
+  background: white; /* Keeping light blue background */
+}
+
+.intro-section ul,
+.mission-text ul,
+.core-functions-section ul {
+  list-style: none;
+  padding-left: 0;
+  color: #666;
+}
+
+.intro-section ul li,
+.mission-text ul li,
+.core-functions-section ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.intro-section ul li::before,
+.mission-text ul li::before,
+.core-functions-section ul li::before {
+  content: "•";
+  color: #87ceeb; /* Pastel light blue */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.vision-section {
+  background: #ffffff; /* White background */
+  padding: 50px 20px;
+}
+
+.vision-section h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.vision-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #87ceeb; /* Pastel light blue */
+  border-radius: 2px;
+}
+
+/* ---------- Mission Section ---------- */
+.mission-section {
+  background: #ffffff; /* Changed to white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
+
+.mission-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mission-text h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.mission-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #87ceeb; /* Pastel light blue */
+  border-radius: 2px;
+}
+
+/* ---------- Mission Image ---------- */
+.mission-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.mission-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+  transition: all 0.3s ease;
+}
+
+.mission-image img:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
+}
+
+/* Core Functions Section */
+.core-functions-section {
+  padding: 50px 20px;
+  margin: 0 auto;
+  background: #ffffff; /* Changed to white background */
+}
+
+.core-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.core-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.core-text h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.core-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background: #87ceeb; /* Pastel light blue */
+  border-radius: 2px;
+}
+
+.core-text ul {
+  list-style: none;
+  padding-left: 0;
+  color: #666;
+}
+
+.core-text ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.core-text ul li::before {
+  content: "•";
+  color: #87ceeb; /* Pastel light blue */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.core-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.core-image img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+  transition: all 0.3s ease;
+}
+
+.core-image img:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
+}
+
+/* ---------- Logo Section ---------- */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ffffff; /* Changed to white background */
+  padding: 50px 20px;
+  border-top: 2px solid #f0f0f0; /* Changed to neutral border */
+  text-align: center;
+}
+
+.logo-section h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.logo-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #87ceeb; /* Pastel light blue */
+  border-radius: 2px;
+}
+
+.about-logo {
+  width: 140px;
+  max-width: 80%;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 3px solid #f0f0f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.about-logo:hover {
+  border-color: #87ceeb; /* Pastel light blue */
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
+}
+
+.logo-section p {
+  color: #666;
+  max-width: 600px;
+  margin: 15px auto 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .mission-content,
+  .core-content {
+    flex-direction: column;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .mission-text,
+  .core-text {
+    text-align: left;
+  }
+
+  .mission-text ul {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .mission-image img,
+  .core-image img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+
+  .about-header {
+    padding: 40px 20px 30px;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .mission-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-logo {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section {
+    padding: 30px 15px;
+  }
+
+  .mission-content,
+  .core-content {
+    gap: 25px;
+  }
+}

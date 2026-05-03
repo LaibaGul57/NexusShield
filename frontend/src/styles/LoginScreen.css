@@ -1,0 +1,176 @@
+/* ---------- Body & Root ---------- */
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- Login Container - Smaller ---------- */
+.login-container {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 40px 30px; /* Reduced padding */
+  width: 360px; /* Reduced width */
+  box-shadow: none;
+  text-align: center;
+  border: 2px solid #f0f0f0;
+}
+
+/* ---------- Title ---------- */
+.login-title {
+  font-size: 1.8rem; /* Slightly smaller */
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px; /* Reduced margin */
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Form ---------- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduced gap */
+}
+
+.login-form input {
+  padding: 12px 14px; /* Slightly smaller padding */
+  border-radius: 0;
+  border: 2px solid #e5e5e5;
+  font-size: 0.95rem; /* Slightly smaller font */
+  color: #1a1a1a;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #87ceeb; /* Pastel light blue */
+  background: #fafafa;
+}
+
+.login-form input::placeholder {
+  color: #999;
+}
+
+/* ---------- Login Button - Pastel light blue ---------- */
+.login-btn {
+  background: #87ceeb; /* Pastel light blue */
+  color: white;
+  border: 2px solid #87ceeb;
+  padding: 12px; /* Reduced padding */
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem; /* Slightly smaller font */
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px; /* Reduced margin */
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #5dade2; /* Slightly darker pastel blue */
+  border-color: #5dade2;
+}
+
+.login-btn:disabled {
+  background: #a8d8ff; /* Lighter pastel blue */
+  border-color: #a8d8ff;
+  cursor: not-allowed;
+}
+
+/* ---------- Forgot Password ---------- */
+.forgot-password {
+  color: #666;
+  margin-top: 16px; /* Reduced margin */
+  font-size: 0.9rem; /* Slightly smaller */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forgot-password:hover {
+  color: #87ceeb; /* Pastel light blue */
+}
+
+/* ---------- Google Button - Pastel light blue ---------- */
+.google-btn {
+  background: #ffffff;
+  color: #87ceeb; /* Pastel light blue */
+  border: 2px solid #87ceeb;
+  padding: 12px; /* Reduced padding */
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 16px; /* Reduced margin */
+  width: 100%;
+  transition: all 0.2s ease;
+  font-size: 0.95rem; /* Slightly smaller font */
+}
+
+.google-btn:hover {
+  background: #87ceeb; /* Pastel light blue */
+  color: #ffffff;
+}
+
+/* ---------- Signup Text ---------- */
+.signup-text {
+  color: #666;
+  margin-top: 20px; /* Reduced margin */
+  font-size: 0.9rem; /* Slightly smaller */
+}
+
+.signup-text span {
+  color: #87ceeb; /* Pastel light blue */
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-text span:hover {
+  color: #5dade2; /* Slightly darker pastel blue */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    width: 100%;
+    max-width: 300px; /* Smaller max-width */
+    padding: 30px 20px; /* Reduced padding */
+    margin: 15px; /* Reduced margin */
+  }
+  
+  .login-title {
+    font-size: 1.6rem; /* Smaller on mobile */
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    gap: 14px; /* Smaller gap */
+  }
+  
+  .login-form input {
+    padding: 10px 12px; /* Smaller padding */
+    font-size: 0.9rem; /* Smaller font */
+  }
+  
+  .login-btn,
+  .google-btn {
+    padding: 10px; /* Smaller buttons */
+    font-size: 0.9rem;
+  }
+  
+  .forgot-password,
+  .signup-text {
+    margin-top: 14px;
+    font-size: 0.85rem;
+  }
+}
