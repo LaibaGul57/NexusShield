@@ -72,7 +72,7 @@ def get_blogs():
                 item = {
                     "title": entry.title,
                     "link": entry.link,
-                    "description": clean_text(entry.get("summary", "")),
+                    #"description": clean_text(entry.get("summary", "")),
                     "pubDate": entry.get("published", ""),
                 }
                 blogs_data.append(item)
