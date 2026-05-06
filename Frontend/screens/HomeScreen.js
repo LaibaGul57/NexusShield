@@ -24,7 +24,11 @@ const HomeScreen = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef(null);
 const route = useRoute();
- const userName = route.params?.user?.name || "Guest";
+//  const userName = route.params?.user?.name || "Guest";
+// In lines ko update karein
+const userName =  route.params?.user?.name ||  route.params?.signupData?.name ||     
+  route.params?.name ||                 
+  "Guest";                              
  
 // const userName = route.params?.user?.name 
 //   || route?.params?.params?.user?.name 
@@ -57,21 +61,21 @@ const route = useRoute();
           {/* Clickable Notification Icon */}
           <TouchableOpacity
             onPress={() => navigation.navigate("Notifications")}
-            activeOpacity={0.7}
+            activeOpacity={0.7} style={{ marginTop: 23 }}
           >
             <Ionicons name="notifications-outline" size={26} color="#fff" />
           </TouchableOpacity>
         </View>
 
         {/* 🔍 Search Bar */}
-        <View style={styles.searchContainer}>
+        {/* <View style={styles.searchContainer}>
           <Ionicons name="search" size={20} color="#fff" style={{ marginRight: 8 }} />
           <TextInput
             placeholder="Search..."
             placeholderTextColor="#ccc"
             style={styles.searchInput}
           />
-        </View>
+        </View> */}
 
         {/* 🖼️ Image Slider */}
         <ScrollView
@@ -115,14 +119,22 @@ const route = useRoute();
             <Text style={styles.boxText}>Previous Attack</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.box}
             onPress={() => navigation.navigate("LinkChecker")}
             activeOpacity={0.8}
-          >
-            <MaterialCommunityIcons name="link-lock" size={32} color="#fff" />
+          > */}
+          <TouchableOpacity
+  style={styles.box}
+  onPress={() => navigation.navigate("LinkCheckerScreen")}
+  activeOpacity={0.8}
+>
+  <MaterialCommunityIcons name="link-lock" size={32} color="#fff" />
             <Text style={styles.boxText}>Link Scanner</Text>
-          </TouchableOpacity>
+</TouchableOpacity>
+
+            
+      
         </Animatable.View>
       </ScrollView>
     </LinearGradient>
@@ -144,26 +156,28 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight: "600",
+    marginTop: 20,
   },
-  searchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.15)",
-    margin: 20,
-    borderRadius: 25,
-    paddingHorizontal: 15,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.3)",
-  },
-  searchInput: {
-    flex: 1,
-    color: "#fff",
-    fontSize: 16,
-    paddingVertical: 8,
-  },
+  // searchContainer: {
+  //   flexDirection: "row",
+  //   alignItems: "center",
+  //   backgroundColor: "rgba(255,255,255,0.15)",
+  //   margin: 20,
+  //   borderRadius: 25,
+  //   paddingHorizontal: 15,
+  //   borderWidth: 1,
+  //   borderColor: "rgba(255,255,255,0.3)",
+  // },
+  // searchInput: {
+  //   flex: 1,
+  //   color: "#fff",
+  //   fontSize: 16,
+  //   paddingVertical: 8,
+  // },
   slider: {
     width: "100%",
     height: 200,
+    marginTop: 30,
   },
   slideImage: {
     width: width,

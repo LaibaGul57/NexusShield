@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114870923309",
+    "project_id": "nexus-shield-57d17",
+    "storage_bucket": "nexus-shield-57d17.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114870923309:android:0c14c764756147116ec8a4",
+        "android_client_info": {
+          "package_name": "com.laibagul.nexusshield"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDISQb5xaihAaqDrRIpvulHz-0QjyKutIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

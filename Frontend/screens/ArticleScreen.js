@@ -14,48 +14,11 @@ export default function ArticleScreen({ navigation }) {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ RSS Feeds related to cyber awareness, hygiene, and future predictions
-  // const rssFeeds = [
-  //   "https://api.rss2json.com/v1/api.json?rss_url=https://security.googleblog.com/feeds/posts/default",
-  //   "https://api.rss2json.com/v1/api.json?rss_url=https://www.cisa.gov/news.xml",
-  //   "https://api.rss2json.com/v1/api.json?rss_url=https://feeds.feedburner.com/KasperskySecurityBlog",
-  //   "https://api.rss2json.com/v1/api.json?rss_url=https://www.darkreading.com/rss.xml",
-  // ];
-
-  // const fetchArticles = async () => {
-  //   try {
-  //     let allArticles = [];
-
-  //     for (let feed of rssFeeds) {
-  //       const response = await fetch(feed);
-  //       const data = await response.json();
-
-  //       if (data.items) {
-  //         // ✅ Filter for cyber awareness / hygiene / prevention / trends
-  //         const filtered = data.items.filter((item) =>
-  //           /(cyber hygiene|security awareness|best practices|data protection|privacy|safe browsing|cyber future|AI security|security trends|cyber education|phishing prevention|digital safety)/i.test(
-  //             item.title + " " + item.description
-  //           )
-  //         );
-  //         allArticles = [...allArticles, ...filtered];
-  //       }
-  //     }
-
-  //     // Sort by latest
-  //     allArticles.sort(
-  //       (a, b) => new Date(b.pubDate) - new Date(a.pubDate)
-  //     );
-
-  //     setArticles(allArticles);
-  //   } catch (err) {
-  //     console.error("Fetch error:", err);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  
 const fetchArticles = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/articles");
+    // const response = await fetch("http://127.0.0.1:8000/api/articles");
+    const response = await fetch("http://192.168.100.11:8000/api/articles");
     const data = await response.json();
     setArticles(data.articles); // ✅ yahan articles array set karna hai
   } catch (err) {

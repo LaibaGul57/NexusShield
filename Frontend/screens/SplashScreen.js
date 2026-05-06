@@ -1,15 +1,114 @@
+// import React, { useEffect } from "react";
+// import { View, Text, StyleSheet, Dimensions, Image, ActivityIndicator } from "react-native";
+// import { LinearGradient } from "expo-linear-gradient";
+// import * as Animatable from "react-native-animatable";
+
+// const { width, height } = Dimensions.get("window");
+
+// const SplashScreen = ({ navigation }) => {
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       navigation.replace("Welcome");
+//     }, 5000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   return (
+//     <LinearGradient
+//       colors={["#000428", "#004e92"]}
+//       style={styles.container}
+//     >
+//       {/* Main Content */}
+//       <View style={styles.content}>
+//         {/* Logo Animation */}
+//         <Animatable.View 
+//           animation="fadeIn" 
+//           duration={1200}
+//           style={styles.logoContainer}
+//         >
+//           <Image
+//             source={require("../assets/Applogo.png")}
+//             style={styles.logo}
+//             resizeMode="contain"
+//           />
+//         </Animatable.View>
+
+//         {/* App Name */}
+        
+//       </View>
+
+//       {/* Circular Loader (Smaller) */}
+//       <Animatable.View 
+//         animation="fadeIn"
+//         duration={800}
+//         delay={800}
+//         style={styles.loaderContainer}
+//       >
+//         <ActivityIndicator size="small" color="#fff" />
+//         <Text style={styles.loadingText}>Loading...</Text>
+//       </Animatable.View>
+//     </LinearGradient>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//   },
+//   content: {
+//     flex: 1,
+//     alignItems: "center",
+//     justifyContent: "center",
+//     paddingHorizontal: 40,
+//   },
+//   logoContainer: {
+//     alignItems: "center",
+//     justifyContent: "center",
+//     marginBottom: 25,
+//   },
+//   logo: {
+//     width: 200,
+//     height: 200,
+//   },
+//   textContainer: {
+//     alignItems: "center",
+//   },
+//   appName: {
+//     fontSize: 32,
+//     fontWeight: "700",
+//     color: "#FFFFFF",
+//     letterSpacing: 1,
+//     textAlign: "center",
+//   },
+//   loaderContainer: {
+//     position: "absolute",
+//     bottom: 60,
+//     left: 0,
+//     right: 0,
+//     alignItems: "center",
+//   },
+//   loadingText: {
+//     color: "#fff",
+//     marginTop: 8,
+//     fontSize: 13,
+//     opacity: 0.8,
+//   },
+// });
+
+// export default SplashScreen;
+// for emulator
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, Dimensions, Image, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Image, ActivityIndicator, Platform } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.replace("Welcome");
-    }, 5000);
+    }, 4000); // 4 seconds kaafi hain
     return () => clearTimeout(timer);
   }, []);
 
@@ -18,9 +117,7 @@ const SplashScreen = ({ navigation }) => {
       colors={["#000428", "#004e92"]}
       style={styles.container}
     >
-      {/* Main Content */}
       <View style={styles.content}>
-        {/* Logo Animation */}
         <Animatable.View 
           animation="fadeIn" 
           duration={1200}
@@ -32,12 +129,8 @@ const SplashScreen = ({ navigation }) => {
             resizeMode="contain"
           />
         </Animatable.View>
-
-        {/* App Name */}
-        
       </View>
 
-      {/* Circular Loader (Smaller) */}
       <Animatable.View 
         animation="fadeIn"
         duration={800}
@@ -65,20 +158,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 25,
+    // Android aur Web shadow balance
+    ...Platform.select({
+      ios: {
+        shadowColor: "#fff",
+        shadowOpacity: 0.3,
+        shadowRadius: 10,
+      },
+      android: {
+        elevation: 5,
+      },
+      web: {
+        filter: "drop-shadow(0px 0px 10px rgba(255,255,255,0.3))"
+      }
+    })
   },
   logo: {
     width: 200,
     height: 200,
-  },
-  textContainer: {
-    alignItems: "center",
-  },
-  appName: {
-    fontSize: 32,
-    fontWeight: "700",
-    color: "#FFFFFF",
-    letterSpacing: 1,
-    textAlign: "center",
   },
   loaderContainer: {
     position: "absolute",
@@ -96,5 +193,4 @@ const styles = StyleSheet.create({
 });
 
 export default SplashScreen;
-
 

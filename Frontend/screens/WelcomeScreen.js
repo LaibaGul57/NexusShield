@@ -7,6 +7,7 @@ import {
   StyleSheet,
   StatusBar,
   Dimensions,
+  Platform, // Platform import karna zaroori hai
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
@@ -50,7 +51,7 @@ export default function WelcomeScreen({ navigation }) {
           <TouchableOpacity
             style={styles.button}
             activeOpacity={0.85}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("Signup")}
           >
             <LinearGradient
               colors={["#00c6ff", "#0072ff"]}
@@ -76,10 +77,21 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     marginBottom: 15,
-    shadowColor: "#00e5ff",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.6,
-    shadowRadius: 15,
+    // Android aur Web ke liye alag alag styles
+    ...Platform.select({
+      ios: {
+        shadowColor: "#00e5ff",
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.6,
+        shadowRadius: 15,
+      },
+      android: {
+        elevation: 10, // Android ke liye shadow ka alternative
+      },
+      web: {
+        filter: "drop-shadow(0px 0px 15px #00e5ff)", // Web support
+      }
+    }),
   },
   textContainer: {
     alignItems: "center",
@@ -114,11 +126,21 @@ const styles = StyleSheet.create({
   button: {
     width: width * 0.6,
     borderRadius: 30,
-    overflow: "hidden",
-    shadowColor: "#00e5ff",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.8,
-    shadowRadius: 12,
+    // Button shadow fix
+    ...Platform.select({
+      ios: {
+        shadowColor: "#00e5ff",
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.8,
+        shadowRadius: 12,
+      },
+      android: {
+        elevation: 8,
+      },
+      web: {
+        boxShadow: "0px 0px 12px rgba(0, 198, 255, 0.8)",
+      }
+    }),
   },
   gradientButton: {
     paddingVertical: 14,

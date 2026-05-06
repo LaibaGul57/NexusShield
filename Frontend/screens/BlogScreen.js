@@ -61,7 +61,7 @@ export default function BlogScreen({ navigation }) {
 // };
 const fetchBlogs = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/blogs");
+    const response = await fetch("http://192.168.100.11:8000/api/blogs");
     const data = await response.json();
     setBlogs(data.blogs); // ✅ ab ye kaam karega
   } catch (err) {

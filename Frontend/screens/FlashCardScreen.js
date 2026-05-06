@@ -1,268 +1,211 @@
 
-
-// import React, { useState, useEffect } from "react";
-// import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
-// import { LinearGradient } from "expo-linear-gradient";
-// import * as Animatable from "react-native-animatable";
-// import { Ionicons } from "@expo/vector-icons";
-// import axios from "axios";
-
-// const { width } = Dimensions.get("window");
-
-// const FlashCardScreen = ({ route, navigation }) => {
-//   const { topic, level } = route.params;   // ✅ topic + level coming from previous screen
-//   const [lesson, setLesson] = useState(null);
-//   const [index, setIndex] = useState(0);
-//   const [flipped, setFlipped] = useState(false);
-
-//   const user_id = "user123";
-
-//   useEffect(() => {
-//     const fetchFlashcards = async () => {
-//       try {
-//        const res = await axios.get(`http://127.0.0.1:8000/flashcard/flashcards/${level}/${topic}?user_id=${user_id}`);
-// setLesson(res.data);
-
-
-//         setLesson(res.data); // ✅ lesson = { topic, level, flashcards: [...] }
-//         console.log("Flashcards Loaded:", res.data.flashcards);
-//       } catch (error) {
-//         console.log("❌ Error fetching flashcards:", error);
-//       }
-//     };
-
-//     fetchFlashcards();
-//   }, []);
-
-//   const handleNext = () => {
-//     setFlipped(false);
-//     if (index < (lesson?.flashcards?.length || 0) - 1) {
-//       setIndex(index + 1);
-//     } else {
-//       navigation.navigate("Quiz", { lesson });
-//     }
-//   };
-
-//   if (!lesson || !lesson.flashcards || lesson.flashcards.length === 0) {
-//     return (
-//       <LinearGradient colors={["#141E30", "#243B55"]} style={styles.container}>
-//         <Text style={{ color: "#fff", fontSize: 20, marginTop: 100 }}>
-//           No flashcards available for this topic.
-//         </Text>
-//       </LinearGradient>
-//     );
-//   }
-
-//   return (
-//     <LinearGradient colors={["#141E30", "#243B55"]} style={styles.container}>
-
-//       {/* Back */}
-//       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-//         <Ionicons name="arrow-back" size={26} color="#fff" />
-//       </TouchableOpacity>
-
-//       {/* Title */}
-//       <Text style={styles.title}>{lesson.topic}</Text>
-
-//       {/* Flashcard */}
-//       <TouchableOpacity onPress={() => setFlipped(!flipped)}>
-//         <Animatable.View
-//           animation="flipInY"
-//           duration={600}
-//           style={styles.card}
-//           key={flipped ? "back" : "front"}
-//         >
-//           <Text style={styles.cardText}>
-//             {flipped ? lesson.flashcards[index].answer : lesson.flashcards[index].question}
-//           </Text>
-//         </Animatable.View>
-//       </TouchableOpacity>
-
-//       {/* Next */}
-//       <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
-//         <LinearGradient colors={["#00C6FF", "#0072FF"]} style={styles.nextGradient}>
-//           <Text style={styles.nextText}>
-//             {index === lesson.flashcards.length - 1 ? "Start Quiz" : "Next Card"}
-//           </Text>
-//         </LinearGradient>
-//       </TouchableOpacity>
-//     </LinearGradient>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: { flex: 1, paddingTop: 70, alignItems: "center" },
-//   backButton: {
-//     position: "absolute",
-//     top: 50,
-//     left: 20,
-//     backgroundColor: "rgba(255,255,255,0.15)",
-//     padding: 8,
-//     borderRadius: 50,
-//   },
-//   title: { fontSize: 24, color: "white", fontWeight: "700", marginBottom: 40 },
-//   card: {
-//     width: width * 0.85,
-//     height: 250,
-//     backgroundColor: "rgba(255,255,255,0.15)",
-//     borderRadius: 16,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     padding: 20,
-//     shadowColor: "#00C6FF",
-//     shadowOpacity: 0.3,
-//     shadowRadius: 10,
-//   },
-//   cardText: { color: "white", fontSize: 18, textAlign: "center", lineHeight: 26 },
-//   nextButton: { marginTop: 50 },
-//   nextGradient: { paddingVertical: 12, paddingHorizontal: 60, borderRadius: 30 },
-//   nextText: { color: "white", fontSize: 18, fontWeight: "600" },
-// });
-
-// export default FlashCardScreen;
-
-
-import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions, StatusBar, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import { Ionicons } from "@expo/vector-icons";
-import axios from "axios";
 
 const { width } = Dimensions.get("window");
 
 const FlashCardScreen = ({ route, navigation }) => {
-  const { topic, level } = route.params;   // ✅ topic + level coming from previous screen
-  const [lesson, setLesson] = useState(null);
+  // 1. Data receive karein jo Training screen se bheja gaya tha
+  // 'lesson' mein backend ka pura response (flashcards array ke sath) hona chahiye
+  const { lesson, topic, level } = route.params; 
+
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
 
-  const user_id = "user123";
-
- useEffect(() => {
-  const fetchFlashcards = async () => {
-    try {
-      const res = await axios.get(
-        `http://127.0.0.1:8000/flashcard/flashcards/${level}/${topic}?user_id=${user_id}`
-      );
-        
-        console.log("🔥 Flashcards Loaded:", res.data.flashcards);
-res.data.flashcards.forEach(fc => console.log(fc.question, fc.answer));
-setLesson(res.data);
-// lesson = { topic, level, flashcards: [...] }
-    } catch (error) {
-      console.log("❌ Error fetching flashcards:", error);
-    }
-  };
-
-  fetchFlashcards();
-}, []);
-
+  // Next Button logic
   const handleNext = () => {
     setFlipped(false);
-    if (index < (lesson?.flashcards?.length || 0) - 1) {
+    const totalCards = lesson?.flashcards?.length || 0;
+
+    if (index < totalCards - 1) {
       setIndex(index + 1);
     } else {
-      navigation.navigate("Quiz", { lesson });
+      // Jab cards khatam ho jayein toh Quiz screen par jayein
+      navigation.navigate("Quiz", { lesson, topic, level });
     }
   };
 
+  // Error handling agar data na mile
   if (!lesson || !lesson.flashcards || lesson.flashcards.length === 0) {
     return (
-      <LinearGradient colors={["#141E30", "#243B55"]} style={styles.container}>
-        <Text style={{ color: "#fff", fontSize: 20, marginTop: 100 }}>
-          No flashcards available for this topic.
-        </Text>
+      <LinearGradient colors={["#000428", "#004e92"]} style={styles.container}>
+        <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="#fff" />
+          </TouchableOpacity>
+          <Text style={{ color: "#fff", fontSize: 18, textAlign: 'center', padding: 20 }}>
+            No flashcards found for "{topic}". Check your backend response.
+          </Text>
+        </SafeAreaView>
       </LinearGradient>
     );
   }
 
   return (
-    <LinearGradient colors={["#141E30", "#243B55"]} style={styles.container}>
+    <LinearGradient colors={["#000428", "#004e92"]} style={styles.container}>
+      <SafeAreaView style={{ flex: 1, alignItems: "center" }}>
+        <StatusBar barStyle="light-content" />
 
-      {/* Back */}
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={26} color="#fff" />
-      </TouchableOpacity>
+        {/* --- Header / Back Button --- */}
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.circularBackButton} onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={22} color="#fff" />
+          </TouchableOpacity>
+        </View>
 
-      {/* Title */}
-      <Text style={styles.title}>{lesson.topic}</Text>
+        {/* --- Dynamic Title --- */}
+        <Text style={styles.title}>{topic}</Text>
 
-      {/* Flashcard */}
-      {/* <TouchableOpacity onPress={() => setFlipped(!flipped)}>
-        <Animatable.View
-          animation="flipInY"
-          duration={600}
-          style={styles.card}
-          key={flipped ? "back" : "front"}
+        {/* --- Flashcard Section --- */}
+        <TouchableOpacity 
+          activeOpacity={0.9} 
+          onPress={() => setFlipped(!flipped)}
+          style={styles.cardContainer}
         >
-         <Text style={styles.cardText}>
-  {flipped 
-    ? lesson.flashcards[index].answer 
-    : lesson.flashcards[index].question
-  }
-</Text>
+          <Animatable.View
+            animation="flipInY"
+            duration={600}
+            style={styles.card}
+            // Key badalne se animation har dafa fresh trigger hoti hai
+            key={index + (flipped ? "-back" : "-front")}
+          >
+            <Text style={styles.cardText}>
+              {flipped 
+                ? lesson.flashcards[index].answer 
+                : lesson.flashcards[index].question
+              }
+            </Text>
+            
+            <View style={styles.tapHint}>
+              <Ionicons name="refresh-circle-outline" size={16} color="#00C6FF" />
+              <Text style={styles.hintText}>
+                {flipped ? " Tap for Question" : " Tap for Answer"}
+              </Text>
+            </View>
+          </Animatable.View>
+        </TouchableOpacity>
 
-        </Animatable.View>
-      </TouchableOpacity> */}
-      <TouchableOpacity onPress={() => {
-  console.log("Flipping card:", index);
-  setFlipped(!flipped);
-}}>
-  <Animatable.View
-    animation="flipInY"
-    duration={600}
-    style={styles.card}
-    key={index + (flipped ? "-back" : "-front")}
-  >
-    <Text style={styles.cardText}>
-      {flipped 
-        ? lesson.flashcards[index].answer 
-        : lesson.flashcards[index].question
-      }
-    </Text>
-  </Animatable.View>
-</TouchableOpacity>
-
-      {/* Next */}
-      <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
-        <LinearGradient colors={["#00C6FF", "#0072FF"]} style={styles.nextGradient}>
-          <Text style={styles.nextText}>
-            {index === lesson.flashcards.length - 1 ? "Start Quiz" : "Next Card"}
+        {/* --- Progress Indicator --- */}
+        <View style={styles.progressContainer}>
+           <Text style={styles.progressText}>
+            Card {index + 1} of {lesson.flashcards.length}
           </Text>
-        </LinearGradient>
-      </TouchableOpacity>
+        </View>
+
+        {/* --- Next / Start Quiz Button --- */}
+        <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+          <LinearGradient colors={["#00C6FF", "#0072FF"]} style={styles.nextGradient}>
+            <Text style={styles.nextText}>
+              {index === lesson.flashcards.length - 1 ? "Start Quiz" : "Next Card"}
+            </Text>
+            <Ionicons name="chevron-forward" size={20} color="#fff" style={{marginLeft: 10}} />
+          </LinearGradient>
+        </TouchableOpacity>
+
+      </SafeAreaView>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingTop: 70, alignItems: "center" },
-  backButton: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    backgroundColor: "rgba(255,255,255,0.15)",
-    padding: 8,
-    borderRadius: 50,
+  container: { 
+    flex: 1 
   },
-  title: { fontSize: 24, color: "white", fontWeight: "700", marginBottom: 40 },
-  card: {
-    width: width * 0.85,
-    height: 250,
+  header: {
+    width: '100%',
+    paddingHorizontal: 20,
+    marginTop: 70,
+    alignItems: 'flex-start',
+  },
+  circularBackButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: "rgba(255,255,255,0.15)",
-    borderRadius: 16,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
-    shadowColor: "#00C6FF",
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
   },
-  cardText: { color: "white", fontSize: 18, textAlign: "center", lineHeight: 26 },
-  nextButton: { marginTop: 50 },
-  nextGradient: { paddingVertical: 12, paddingHorizontal: 60, borderRadius: 30 },
-  nextText: { color: "white", fontSize: 18, fontWeight: "600" },
+  title: { 
+    fontSize: 22, 
+    color: "white", 
+    fontWeight: "700", 
+    marginTop: 20, 
+    marginBottom: 40,
+    textAlign: 'center',
+    paddingHorizontal: 20
+  },
+  cardContainer: {
+    marginTop: 10,
+  },
+  card: {
+    width: width * 0.85,
+    height: 300,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 25,
+    borderWidth: 0.1,
+    borderColor: "rgba(0, 198, 255, 0.3)",
+    // Neumorphic shadow effect
+    shadowColor: "#00C6FF",
+    shadowOpacity: 0.2,
+    shadowRadius: 15,
+    elevation: 5,
+  },
+  cardText: { 
+    color: "white", 
+    fontSize: 18, 
+    textAlign: "center", 
+    lineHeight: 28,
+    fontWeight: '500'
+  },
+  tapHint: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 20,
+  },
+  hintText: { 
+    color: "#00C6FF", 
+    fontSize: 12, 
+    fontWeight: '600',
+    letterSpacing: 0.5
+  },
+  progressContainer: {
+    marginTop: 30,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+    borderRadius: 20,
+  },
+  progressText: { 
+    color: 'rgba(255,255,255,0.6)', 
+    fontSize: 14,
+    fontWeight: 'bold' 
+  },
+  nextButton: { 
+    marginTop: 'auto',
+    marginBottom: 100 
+  },
+  nextGradient: { 
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15, 
+    paddingHorizontal: 40, 
+    borderRadius: 30,
+    elevation: 5
+  },
+  nextText: { 
+    color: "white", 
+    fontSize: 18, 
+    fontWeight: "700" 
+  },
 });
 
-export default FlashCardScreen;
+export default FlashCardScreen;  
